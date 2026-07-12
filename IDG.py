@@ -1,5 +1,5 @@
 """Convert a NumPy tensor into a MATLAB-style .bin file.
- 
+
 This script takes two arguments:
     1. input_path  - path to the input .npy file
     2. output_path - path to the output .bin file
