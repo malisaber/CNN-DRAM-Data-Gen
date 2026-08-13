@@ -76,13 +76,31 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Generate a random Q8.8 tensor and save it as a binary file."
     )
-    parser.add_argument("-j", "--json",         dest="json_path",   type=Path,  default=None,                   help="Optional JSON file to read B, C, W, H from the input layer.", )
-    parser.add_argument("-B", "--batch-size",                       type=int,   default=16)
-    parser.add_argument("-C", "--channels",                         type=int,   default=16)
-    parser.add_argument("-W", "--width",                            type=int,   default=16)
-    parser.add_argument("-H", "--height",                           type=int,   default=16)
-    parser.add_argument("-o", "--output",                           type=Path,  default=Path("Input_rand.npy"), help="Output *.npy file path.")
-    parser.add_argument("-s"  "--seed",                             type=int,   default=None,                   help="Optional random seed for reproducible output.",)
+    parser.add_argument(
+        "-j",
+        "--json",
+        dest="json_path",
+        type=Path,
+        default=None,
+        help="Optional JSON file to read B, C, W, H from the input layer.",
+    )
+    parser.add_argument("-B", "--batch-size", type=int, default=1)
+    parser.add_argument("-C", "--channels", type=int, default=3)
+    parser.add_argument("-W", "--width", type=int, default=224)
+    parser.add_argument("-H", "--height", type=int, default=224)
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        default=Path("Input_rand.npy"),
+        help="Output .npy file path.",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Optional random seed for reproducible output.",
+    )
     return parser.parse_args()
 
 
