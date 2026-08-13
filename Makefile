@@ -15,4 +15,5 @@ numpy:
 deps: check-tools numpy
 
 clean:
-	@printf '%s\n' "Nothing to clean for Python generators."
+	rm -f *.npy
+	rm -r -f ./*/
